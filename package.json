@@ -1,0 +1,16 @@
+{
+  "name": "bwas",
+  "version": "1.0.0",
+  "description": "Bing wallpaper as a service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "Abu Ashraf Masnun <masnun@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^2.9.33",
+    "express": "^4.13.1",
+    "request": "^2.58.0"
+  }
+}
