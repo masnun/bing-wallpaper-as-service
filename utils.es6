@@ -4,10 +4,10 @@ let promisedRequest = promisifyRequest(request);
 
 function promisifyRequest(request) {
 
-    return function (url) {
-        return new Promise(function (resolve, reject) {
+    return (url) => {
+        return new Promise((resolve, reject) => {
 
-            request(url, function (err, res, body) {
+            request(url, (err, res, body) => {
                 if (err !== null) {
                     reject(err);
                 } else {
@@ -30,7 +30,7 @@ export function getBingWallpaper() {
     var BING_URL = 'http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1';
 
     return promisedRequest(BING_URL)
-        .then(function (response) {
+        .then((response) => {
             var data = JSON.parse(response);
             var image = data.images[0];
 

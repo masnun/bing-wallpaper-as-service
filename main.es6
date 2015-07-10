@@ -5,11 +5,11 @@ import express from "express"
 
 var app = express();
 
-app.get("/", function (req, res) {
-    var bingPromise = getBingWallpaper()
-        .then(function (data) {
+app.get("/", (req, res) => {
+    getBingWallpaper()
+        .then((data) => {
             res.json(data);
-        }).catch(function (err) {
+        }).catch((err) => {
             res.error(err);
         });
 });
@@ -17,6 +17,6 @@ app.get("/", function (req, res) {
 
 var port = process.env.PORT || 3000;
 
-var server = app.listen(port, function () {
+var server = app.listen(port, () => {
     console.log('Service started on port :' + port);
 });
